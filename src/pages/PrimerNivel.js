@@ -1,3 +1,5 @@
+import chicken from '../assets/images/chicken.png';
+
 const PrimerNivel = () => {
   let cards = ['🚀','🍔','🍩','🏀'];
   const disorderArray = elements => elements.sort(() => Math.random()-0.5);
@@ -10,13 +12,24 @@ const PrimerNivel = () => {
   }
 
   const view = `
+    <header class="header">
+      <section class="header__container">
+        <div>
+          <p>Movimientos:</p>
+          <p class="moves"><span>00</span>/08</p>
+        </div>
+        <div>
+          <span>Nivel</span>
+          <img src=${chicken} alt="nivel actual del juego">
+        </div>
+      </section>
+    </header>
     <article>
-      <p>primer nivel del juego</p>
       <div class='cardsContainerOne first-level'>
         ${printCards()}
       </div>
     </article>
-    <a href="#/segundo-nivel">siguiente nivel</a>
+    
   `;
 
   return view;

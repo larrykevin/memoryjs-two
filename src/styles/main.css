@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Whyte Book';
+  src: url('../assets/fonts/Whyte-Book.woff2') format('woff2'),
+        url('../assets/fonts/Whyte-Book.woff') format('woff'),
+        url('../assets/fonts/Whyte-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Whyte';
+  src: url('../assets/fonts/Whyte-Black.woff2') format('woff2'),
+      url('../assets/fonts/Whyte-Black.woff') format('woff'),
+      url('../assets/fonts/Whyte-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,16 +23,113 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 1.6rem 2.4rem;
+  font-family: 'Whyte Book', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.6rem;
-  background-color: papayawhip;
+}
+h1 {
+  margin-bottom: 6.4rem;
+  padding: 0.4rem 0.8rem;
+  width: fit-content;
+  font-family: 'Whyte', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3.6rem;
+  font-weight: 900;
+  color: inherit;
+  background-color: #C7B9FF;
+}
+h2 {
+  font-family: 'Whyte', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style-type: square;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.header section {
+  margin: 0 -2.4rem 3.6rem;
+  padding: 0 2.4rem 1.6rem;
+  display: flex;
+  border-bottom: 2px dashed #BE92EE;
+}
+.header__container {
+  position: relative;
+}
+.header__container div p:nth-of-type(2) {
+  font-family: 'Whyte', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+}
+.header__container div:nth-of-type(2) {
+  position: absolute;
+  top: -1.6rem;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 7.4rem;
+  height: 7.4rem;
+  background: linear-gradient(180deg, #BE92EE 0%, #BE92EE 100%);
+}
+.header__container div:nth-of-type(2) span {
+  margin-bottom: -1.8rem;
+}
+.header__container div img {
+  width: 3rem;
+}
+.instructions {
+  margin-top: 2.4rem;
+}
+.instructions p {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.instructions ul {
+  margin-top: 1.6rem;
+}
+.instructions li {
+  margin-bottom: 1.6rem;
+}
+.instructions li::before {
+  content: "\2584";
+  display: inline-flex; 
+  font-size: 1.6rem;
+  vertical-align: 5px;
+  padding-right: 8px;
+  color: #C7B9FF;
+}
+.button-home {
+  margin-top: 4.8rem;
+}
+.btn-primary {
+  padding: 1.6rem 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Whyte', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(180deg, #5551FF 0%, #3A35FF 100%);
+  box-shadow: 0px 8px 10px rgba(89, 72, 242, 0.25);
+  border-radius: 8px;
 }
 .cardsContainerOne,
 .cardsContainerTwo,
 .cardsContainerThree {
   display: grid;
-  grid-template-columns: repeat(4, minmax(max-content, 7.2rem));
-  grid-template-rows: repeat(6, minmax(max-content, 7.2rem));
+  grid-template-columns: repeat(4, minmax(max-content, 5.6rem));
+  grid-template-rows: repeat(6, minmax(max-content, 5.6rem));
   gap: 1.6rem;
 }
 .cardsContainerOne div,
@@ -47,7 +160,7 @@ body {
   bottom: 0;
   display: grid;
   place-items: center;
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   border: 2px solid #BE92EE;
   border-radius: 10px;
   transform: rotateY(-180deg);
@@ -62,6 +175,42 @@ body {
 .card.reveal {
   transform: rotateY(-180deg);
 }
+.game-over {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(4px);
+}
+.game-over__container {
+  padding: 2.4rem;
+  display: grid;
+  align-content: space-between;
+  width: 27rem;
+  max-width: 27rem;
+  height: 39rem;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #000;
+}
+.game-over__container img {
+  margin-top: 4rem;
+  place-self: center;
+  width: 8.8rem;
+}
+.game-over__container h3 {
+  font-family: 'Whyte', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: white;
+}
+.game-over__container a {
+  font-size: 1.6rem;
+}
+
 .first-level div:nth-of-type(1){
   grid-column: 2 / 3;
   grid-row: 2 / 3;
@@ -93,4 +242,76 @@ body {
 .first-level div:nth-of-type(8){
   grid-column: 3 / 4;
   grid-row: 5 / 6;
+}
+.second-level div:nth-of-type(2) {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.second-level div:nth-of-type(3) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+.second-level div:nth-of-type(4) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+.second-level div:nth-of-type(5) {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+.second-level div:nth-of-type(6) {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+.second-level div:nth-of-type(7) {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+.second-level div:nth-of-type(8) {
+  grid-column: 4 / 5;
+  grid-row: 3 / 4;
+}
+.second-level div:nth-of-type(9) {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+.second-level div:nth-of-type(10) {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+.second-level div:nth-of-type(11) {
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+}
+.second-level div:nth-of-type(12) {
+  grid-column: 4 / 5;
+  grid-row: 4 / 5;
+}
+.second-level div:nth-of-type(13) {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+.second-level div:nth-of-type(14) {
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
+}
+.second-level div:nth-of-type(15) {
+  grid-column: 4 / 5;
+  grid-row: 5 / 6;
+}
+.second-level div:nth-of-type(16) {
+  grid-column: 4 / 5;
+  grid-row: 6 / 7;
+}
+
+@media (min-width: 426px) {
+  .cardsContainerOne,
+  .cardsContainerTwo,
+  .cardsContainerThree {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(max-content, 7.2rem));
+    grid-template-rows: repeat(6, minmax(max-content, 7.2rem));
+    justify-content: center;
+    gap: 1.6rem;
+  }
 }
