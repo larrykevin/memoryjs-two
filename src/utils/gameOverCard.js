@@ -4,12 +4,12 @@ const gameOverCard = () => {
   const container = document.querySelector('.Content');
   const card = document.createElement('section');
   
-  card.classList.add('game-over');
+  card.classList.add('pop-up');
   card.innerHTML = `
-    <div class="game-over__container">
-      <img src=${iconSkull} alt="game over">
+    <div class="pop-up__container game-over">
+      <img src=${iconSkull} alt="icon game over">
       <h3>Game Over</h3>
-      <a href="#/" class="btn-primary">Volver a intentar?</a>
+      <a href="#/" class="btn-primary">¿Volver a intentar?</a>
     </div>
   `;
   container.append(card);

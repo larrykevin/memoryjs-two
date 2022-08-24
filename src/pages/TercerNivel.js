@@ -1,4 +1,4 @@
-import chicken from '../assets/images/chicken.png';
+import tiger from '../assets/images/tiger.png';
 
 const TercerNivel = () => {
   let cards = ['🚀','🍔','🍩','🏀','🍦','🍟','🍕','🛸','🎃','🎁','🌈','💰'];
@@ -20,11 +20,11 @@ const TercerNivel = () => {
       <section class="header__container">
         <div>
           <p>Movimientos:</p>
-          <p>00/<span>01</span></p>
+          <p class="moves"><span>00</span>/36</p>
         </div>
         <div>
           <span>Nivel</span>
-          <img src=${chicken} alt="nivel actual del juego">
+          <img src=${tiger} alt="nivel actual del juego">
         </div>
       </section>
     </header>
@@ -33,7 +33,6 @@ const TercerNivel = () => {
         ${printCards()}
       </div>
     </article>
-    <a href="#/">Repetir hazania</a>
   `;
 
   return view;

@@ -48,11 +48,9 @@ const readyGame = () => {
       //Si son iguales
       if(revealedCards.length > 1) {
         if(revealedCards[0] !== revealedCards[1]) {
-          if(revealedCards[0] !== revealedCards[1]) {
-            let movesInPlay = document.querySelector('.moves span');
-            moves++;
-            movesInPlay.textContent = `0${moves}`;
-          }
+          let movesInPlay = document.querySelector('.moves span');
+          moves++;
+          movesInPlay.textContent = `0${moves}`;
         }
         if(revealedCards[0] === revealedCards[1]) {
           cardsSuccess.push(selectedCards[0],selectedCards[1]);
@@ -62,7 +60,7 @@ const readyGame = () => {
         if(cardsSuccess.length === 8) {
           successCard();
         }
-        if(moves >= 2) {
+        if(moves >= 8) {
           gameOverCard();
         }
 
@@ -107,6 +105,11 @@ const readyGame = () => {
 
       //Si son iguales
       if(revealedCards.length > 1) {
+        if(revealedCards[0] !== revealedCards[1]) {
+          let movesInPlay = document.querySelector('.moves span');
+          moves++;
+          movesInPlay.textContent = `0${moves}`;
+        }
         if(revealedCards[0] === revealedCards[1]) {
           cardsSuccess.push(selectedCards[0],selectedCards[1]);
           selectedCards[0].style.display = 'none';
@@ -118,6 +121,7 @@ const readyGame = () => {
         if(moves >= 16) {
           gameOverCard();
         }
+
         revealedCards = [];
         selectedCards = [];
       }
@@ -159,6 +163,11 @@ const readyGame = () => {
 
       //Si son iguales
       if(revealedCards.length > 1) {
+        if(revealedCards[0] !== revealedCards[1]) {
+          let movesInPlay = document.querySelector('.moves span');
+          moves++;
+          movesInPlay.textContent = `0${moves}`;
+        }
         if(revealedCards[0] === revealedCards[1]) {
           cardsSuccess.push(selectedCards[0],selectedCards[1]);
           selectedCards[0].style.display = 'none';
@@ -167,9 +176,10 @@ const readyGame = () => {
         if(cardsSuccess.length === 24) {
           completeCard();
         }
-        if(moves >= 24) {
+        if(moves >= 36) {
           gameOverCard();
         }
+
         revealedCards = [];
         selectedCards = [];
       }
