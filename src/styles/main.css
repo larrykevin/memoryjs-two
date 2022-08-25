@@ -429,3 +429,17 @@ img {
     gap: 1.6rem;
   }
 }
+@media (min-width: 540px) {
+  li,
+  p {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+  }
+  .Content {
+    margin: 48px auto 0;
+    width: 400px;
+  }
+  .header section {
+    border-bottom: none;
+  }
+}
